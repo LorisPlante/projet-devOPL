@@ -13,7 +13,7 @@ export default function TestPage() {
 
   return (
     <div className="p-8 space-y-6">
-      <h1 className="text-2xl font-bold">Page de test des fonctions</h1>
+      <h1 className="text-2xl font-bold">Page test des fonctions</h1>
 
       {/* Additionner */}
       <div>
