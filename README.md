@@ -141,7 +141,7 @@ Accès aux données :🔗 http://localhost:9000/
 Ce projet utilise du Next.js, il comporte plusieurs dossiers :
 
 - `/app` : contient les pages de l’application
-- `
+- `/.github`: contient les différents workflows de l'app (release, run-tests,test-pr)
 - `/components`: composants réutilisables
 - `/grafana`: contient la configuration de Grafana pour avoir une visualisation des données.
 - `/loki`: contient la configuration pour l'intégration de Loki, permettant la collecte et la gestion des logs. Les logs collectés sont envoyés à Grafana pour une visualisation centralisée.
@@ -246,4 +246,15 @@ Le projet utilise **TypeScript**, un sur-ensemble typé de JavaScript, pour amé
 
 
 
+### 7. Description des containers 
 
+| Nom du conteneur     | Image utilisée         | Port mappé / URL d'accès                    | Description |
+|----------------------|------------------------|---------------------------------------------|-------------|
+| **sonarqube**        | `sonarqube`            | [9000:9000](http://localhost:9000)          | Outil d’analyse de qualité de code. |
+| **prometheus**       | `prom/prom`            | [9090:9090](http://localhost:9090)          | Système de monitoring et d’alerte. |
+| **nextjs-1**         | `projet-devo`          | [3000:3000](http://localhost:3000)          | Application web Next.js. |
+| **loki**             | `grafana/loki`         | [3100:3100](http://localhost:3100)          | Agrégateur de logs développé par Grafana, fonctionne avec Promtail. |
+| **node-exporter**    | `prom/node-exporter`   | [9100:9100](http://localhost:9100)          | Exporte les métriques système pour Prometheus. |
+| **grafana**          | `grafana/grafana`      | [3001:3000](http://localhost:3001)          | Interface de visualisation de métriques (Prometheus, Loki). |
+| **sonarqube_dl**     | `postgres` (présumé)   | Interne (base à la BDD)    | Base de données ou composant lié à SonarQube. |
+| **promtail**         | `grafana/promtail`     | Interne / envoie vers Loki                  | Collecte les logs et les transmet à Loki. |
