@@ -57,6 +57,13 @@ Ce projet [Next.js](https://nextjs.org) est un projet Tailwind crée avec [`crea
   </ul>
 </details>
 
+<details>
+  <summary>7. Description des containers</summary>
+  <ul>
+    <li><a href="#7-description-des-containers">Description des containers</a></li>
+  </ul>
+</details>
+
 
 
 ## Premiers pas
